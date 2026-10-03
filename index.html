@@ -253,7 +253,7 @@ h1,h2,h3{font-family:"Baloo 2",sans-serif;margin:0 0 10px}h1{font-size:clamp(38p
         <button class="btn primary" onclick="joinGame()">🚀 Masuk Room</button>
         <button class="btn" style="background:#eeeafb;color:var(--purple)" onclick="hostGame()">👩‍🏫 Buat Room / Mode Guru</button>
       </div>
-      <p id="firebaseStatus" class="notice" style="margin-top:12px">Status: belum terhubung. Isi konfigurasi Firebase di bagian JS terlebih dahulu.</p>
+      <p id="firebaseStatus" class="notice" style="margin-top:12px">Status: menghubungkan ke Firebase...</p>
     </div>
     <div class="card">
       <h3>📊 Papan Skor</h3>
@@ -306,13 +306,13 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/12.19.0/fireba
 import { getDatabase, ref, set, update, onValue, get, child, serverTimestamp, onDisconnect, remove } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-database.js";
 
 const firebaseConfig = {
-  apiKey: "GANTI_DENGAN_API_KEY",
-  authDomain: "GANTI_DENGAN_PROJECT.firebaseapp.com",
-  databaseURL: "https://GANTI_DENGAN_DATABASE.firebasedatabase.app",
-  projectId: "GANTI_DENGAN_PROJECT_ID",
-  storageBucket: "GANTI_DENGAN_PROJECT.firebasestorage.app",
-  messagingSenderId: "GANTI_DENGAN_MESSAGING_SENDER_ID",
-  appId: "GANTI_DENGAN_APP_ID"
+  apiKey: "AIzaSyAQWDr7s3nH42yESrc8c5lzwUtoKJb42Q",
+  authDomain: "kieya-cc697.firebaseapp.com",
+  databaseURL: "https://kieya-cc697-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "kieya-cc697",
+  storageBucket: "kieya-cc697.firebasestorage.app",
+  messagingSenderId: "525059189413",
+  appId: "1:525059189413:web:fc8a2a0ce6c6442a193b4c"
 };
 
 let db=null, currentRoom="", currentPlayer="", isHost=false, offset=0, answerLocked=false, unsubscribeRoom=null;
@@ -432,9 +432,11 @@ function startTimer(startAt){
 window.submitAnswer=async function(choice){
   if(answerLocked)return; answerLocked=true;
   const snap=await get(ref(db,roomPath())); const data=snap.val(); const qi=data.questionIndex;
-  const q=questions[qi]; const correct=choice===q.c; const elapsed=Math.max(0,nowServer()-(data.questionStartedAt||nowServer()));
-  // Score rewards correctness + speed. Correct answers in the first 5 seconds receive up to 100 points.
-  const speed=Math.max(0,100-Math.floor(elapsed/50)); const points=correct?100+speed:0;
+  const q=questions[qi]; const elapsed=Math.max(0,nowServer()-(data.questionStartedAt||nowServer()));
+  const withinTime=elapsed<=5000;
+  const correct=choice===q.c;
+  // Only answers submitted within 5 seconds can score; faster correct answers receive more points.
+  const speed=Math.max(0,100-Math.floor(elapsed/50)); const points=(correct&&withinTime)?100+speed:0;
   const player=(data.players||{})[currentPlayer]||{name:"Siswa",score:0,correct:0,answered:0};
   const updates={};
   updates[`${roomPath()}/answers/${currentPlayer}/${qi}`]={choice,correct,submittedAt:serverTimestamp(),elapsed};
