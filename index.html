@@ -8,6 +8,31 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+.video-ajar {
+  width: 100%;
+  margin: 0 auto 20px;
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.video-container iframe,
+.video-container video {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.petunjuk-video {
+  margin-top: 15px;
+  line-height: 1.6;
+}
 <style>
 :root{
   --navy:#25316D; --purple:#5B4B8A; --orange:#F28C28; --yellow:#FFD166;
@@ -112,41 +137,39 @@ h1,h2,h3{font-family:"Baloo 2",sans-serif;margin:0 0 10px}h1{font-size:clamp(38p
   </div>
 </section>
 
+
 <section id="video" class="contentPage">
   <div class="card video-ajar">
-  <h2>🎬 Video Ajar Piagam Madinah</h2>
-  <p>
-    Yuk, simak video berikut untuk memahami Piagam Madinah
-    dan kehidupan masyarakat yang majemuk!
-  </p>
+    <h2>🎬 Video Ajar Piagam Madinah</h2>
 
-  <div class="video-container">
-    <iframe
-      src="https://www.youtube-nocookie.com/embed/PbaGG7I85pc"
-      title="Video Ajar Piagam Madinah"
-      loading="lazy"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      referrerpolicy="strict-origin-when-cross-origin"
-      allowfullscreen>
-    </iframe>
-  </div>
+    <p>
+      Yuk, simak video berikut untuk memahami Piagam Madinah
+      dan kehidupan masyarakat yang majemuk!
+    </p>
 
-  <p class="petunjuk-video">
-    📌 Setelah menonton, catat 3 prinsip hidup bersama
-    yang dapat diterapkan di Indonesia.
-  </p>
+    <div class="video-container">
+      <iframe
+        src="https://www.youtube-nocookie.com/embed/PbaGG7I85pc"
+        title="Video Ajar Piagam Madinah"
+        loading="lazy"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen>
+      </iframe>
+    </div>
 
-  <a
-    href="https://youtu.be/PbaGG7I85pc"
-    target="_blank"
-    rel="noopener noreferrer">
-    ▶️ Tonton di YouTube
-  </a>
-</section>
+    <p class="petunjuk-video">
+      📌 Setelah menonton, catat 3 prinsip hidup bersama
+      yang dapat diterapkan di Indonesia.
+    </p>
 
+    <a href="https://youtu.be/PbaGG7I85pc"
+       target="_blank"
+       rel="noopener noreferrer">
+      ▶️ Tonton di YouTube
+    </a>
   </div>
 </section>
-
 
 <section id="materi" class="contentPage">
   <div class="sectionTitle"><div><h2>📖 Materi Piagam Madinah</h2><p>Pilih bagian materi yang ingin dipelajari</p></div><button class="btn primary" onclick="showPage('home')">← Menu</button></div>
