@@ -489,29 +489,119 @@ function startTimer(startAt){
   tick();timerInt=setInterval(tick,100);
 }
 window.submitAnswer=async function(choice){
-  if(answerLocked)return; answerLocked=true;
-  const snap=await get(ref(db,roomPath())); const data=snap.val(); const qi=data.questionIndex;
-  const q=questions[qi]; const elapsed=Math.max(0,nowServer()-(data.questionStartedAt||nowServer()));
+  if(answerLocked)return;
+  answerLocked=true;
+
+  const snap=await get(ref(db,roomPath()));
+  const data=snap.val();
+
+  if(!data || data.status!=="playing"){
+    answerLocked=false;
+    return;
+  }
+
+  const qi=data.questionIndex;
+  const q=questions[qi];
+
+  if(!q){
+    answerLocked=false;
+    return;
+  }
+
+  // Pastikan siswa masih berada pada soal yang sedang aktif
+  const existingAnswer=((data.answers||{})[currentPlayer]||{})[qi];
+
+  // Kalau soal ini sudah pernah dijawab, jangan beri poin lagi
+  if(existingAnswer){
+    return;
+  }
+
+  const elapsed=Math.max(
+    0,
+    nowServer()-(data.questionStartedAt||nowServer())
+  );
+
   const withinTime=elapsed<=5000;
   const correct=choice===q.c;
-  // Only answers submitted within 5 seconds can score; faster correct answers receive more points.
-  const speed=Math.max(0,100-Math.floor(elapsed/50)); const points=(correct&&withinTime)?100+speed:0;
-  const player=(data.players||{})[currentPlayer]||{name:"Siswa",score:0,correct:0,answered:0};
+
+  // Poin hanya diberikan jika:
+  // 1. jawaban benar
+  // 2. dijawab dalam 5 detik
+  const speed=Math.max(0,100-Math.floor(elapsed/50));
+  const points=(correct && withinTime)?100+speed:0;
+
+  const player=
+    (data.players||{})[currentPlayer]||
+    {
+      name:"Siswa",
+      score:0,
+      correct:0,
+      answered:0
+    };
+
   const updates={};
-  updates[`${roomPath()}/answers/${currentPlayer}/${qi}`]={choice,correct,submittedAt:serverTimestamp(),elapsed};
-  updates[`${roomPath()}/players/${currentPlayer}/score`]=(player.score||0)+points;
-  updates[`${roomPath()}/players/${currentPlayer}/correct`]=(player.correct||0)+(correct?1:0);
-  updates[`${roomPath()}/players/${currentPlayer}/answered`]=(player.answered||0)+1;
+
+  // Simpan jawaban siswa
+  updates[
+    `${roomPath()}/answers/${currentPlayer}/${qi}`
+  ]={
+    choice:choice,
+    correct:correct,
+    points:points,
+    submittedAt:serverTimestamp(),
+    elapsed:elapsed
+  };
+
+  // Tambahkan skor
+  updates[
+    `${roomPath()}/players/${currentPlayer}/score`
+  ]=(player.score||0)+points;
+
+  // Jumlah benar hanya bertambah kalau benar
+  updates[
+    `${roomPath()}/players/${currentPlayer}/correct`
+  ]=(player.correct||0)+(correct?1:0);
+
+  // Jumlah dijawab bertambah
+  updates[
+    `${roomPath()}/players/${currentPlayer}/answered`
+  ]=(player.answered||0)+1;
+
   await update(ref(db),updates);
-  document.querySelectorAll(".choice").forEach((b,i)=>{b.disabled=true;if(i===choice)b.classList.add(correct?"correct":"wrong")});
+
+  document.querySelectorAll(".choice").forEach((b,i)=>{
+    b.disabled=true;
+
+    if(i===choice){
+      b.classList.add(correct?"correct":"wrong");
+    }
+  });
+};
 };
 window.startGame=async function(){
   if(!isHost)return;
   await update(ref(db,roomPath()),{status:"playing",questionIndex:0,questionStartedAt:serverTimestamp(),answers:{}});
 };
 window.nextQuestion=async function(){
-  const snap=await get(ref(db,roomPath()));const data=snap.val();const next=(data.questionIndex||0)+1;
-  await update(ref(db,roomPath()),{questionIndex:next,questionStartedAt:serverTimestamp()});
+  if(!isHost)return;
+
+  const snap=await get(ref(db,roomPath()));
+  const data=snap.val();
+
+  if(!data || data.status!=="playing")return;
+
+  const currentQuestion=data.questionIndex;
+
+  // Pemain yang belum menjawab TIDAK mendapatkan poin.
+  // Tidak perlu menambahkan apa pun ke score mereka.
+
+  const next=currentQuestion+1;
+
+  await update(ref(db,roomPath()),{
+    questionIndex:next,
+    questionStartedAt:serverTimestamp()
+  });
+};
 };
 window.finishGame=async function(){await update(ref(db,roomPath()),{status:"finished"});};
 window.resetRoom=async function(){if(currentRoom&&db){await remove(ref(db,roomPath()));location.reload();}};
