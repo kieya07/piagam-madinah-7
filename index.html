@@ -4,978 +4,921 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Media Interaktif PAI — Piagam Madinah</title>
-<meta name="description" content="Media pembelajaran interaktif PAI tentang Piagam Madinah dan masyarakat majemuk.">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<title>Materi Piagam Madinah | SKI Kelas VII</title>
 
 <style>
 :root {
-  --navy:#25316D;
-  --purple:#5B4B8A;
-  --orange:#F28C28;
-  --yellow:#FFD166;
-  --cream:#FFF9F0;
-  --blue:#DCE9FF;
-  --ink:#22253A;
+  --utama: #45316e;
+  --kedua: #7356a5;
+  --aksen: #f0b84b;
+  --latar: #f7f4fc;
+  --teks: #302b3d;
+  --putih: #ffffff;
+  --hijau: #21865b;
+  --merah: #c64c54;
 }
-* { box-sizing:border-box; }
-html { scroll-behavior:smooth; }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 body {
-  margin:0;
-  font-family:Poppins, sans-serif;
-  color:var(--ink);
-  background:linear-gradient(135deg,#fff9f0,#eef4ff 55%,#f7eaff);
-  min-height:100vh;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--latar);
+  color: var(--teks);
+  line-height: 1.8;
 }
-button,input,textarea { font:inherit; }
-button { cursor:pointer; border:0; }
-button:disabled { cursor:not-allowed; opacity:.65; }
-.header {
-  position:sticky;
-  top:0;
-  z-index:20;
-  background:#ffffffed;
-  border-bottom:1px solid #eee;
+header {
+  background: linear-gradient(135deg, #382653, #7655a8);
+  color: white;
+  padding: 28px 6%;
 }
-.nav {
-  max-width:1120px;
-  margin:auto;
-  padding:12px 18px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:12px;
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  padding: 14px;
+  background: white;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 3px 12px #00000012;
 }
-.brand {
-  display:flex;
-  align-items:center;
-  gap:10px;
-  font-weight:800;
-  color:var(--navy);
+nav a {
+  color: var(--utama);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 8px 12px;
+  border-radius: 20px;
 }
-.brandIcon {
-  width:42px;
-  height:42px;
-  border-radius:14px;
-  background:linear-gradient(135deg,var(--navy),var(--purple));
-  display:grid;
-  place-items:center;
-  color:white;
-  font-size:22px;
-}
-.navlinks { display:flex; gap:7px; flex-wrap:wrap; }
-.navlinks button {
-  background:#f4f3fb;
-  color:var(--navy);
-  padding:9px 12px;
-  border-radius:14px;
-  font-size:13px;
-  font-weight:700;
-}
-.navlinks button:hover { background:var(--yellow); }
-main { max-width:1120px; margin:auto; padding:26px 18px 60px; }
+nav a:hover { background: #eee6fa; }
 .hero {
-  border-radius:30px;
-  padding:42px 30px;
-  background:linear-gradient(135deg,#25316D,#5B4B8A,#8B63B8);
-  color:white;
+  max-width: 1000px;
+  margin: auto;
+  text-align: center;
+  padding: 35px 15px 45px;
 }
-.badge {
-  display:inline-block;
-  padding:8px 13px;
-  border-radius:999px;
-  background:#ffffff25;
-  font-size:12px;
-  font-weight:800;
+.hero .arab {
+  font-size: clamp(28px, 5vw, 46px);
+  color: #ffdb8a;
+  line-height: 1.7;
 }
-h1,h2,h3 { font-family:"Baloo 2",sans-serif; margin:0 0 10px; }
-h1 { font-size:clamp(38px,7vw,65px); line-height:1; }
-.hero p { line-height:1.8; }
-.heroActions { display:flex; gap:10px; flex-wrap:wrap; margin-top:20px; }
-.btn {
-  padding:12px 17px;
-  border-radius:15px;
-  font-weight:800;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:7px;
+.hero h1 {
+  font-size: clamp(28px, 5vw, 48px);
+  line-height: 1.25;
+  margin: 10px 0;
 }
-.primary { background:var(--orange); color:white; }
-.light { background:white; color:var(--navy); }
-.ghost { background:#ffffff25; color:white; }
-.section { margin-top:28px; }
-.sectionTitle {
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:12px;
-  margin-bottom:14px;
+.hero p { max-width: 700px; margin: 15px auto; }
+.tag {
+  display: inline-block;
+  border: 1px solid #ffffff66;
+  border-radius: 25px;
+  padding: 5px 14px;
+  font-size: 13px;
 }
-.sectionTitle p { color:#6d6f80; font-size:13px; margin:0; }
-.grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
-.grid2 { display:grid; grid-template-columns:repeat(2,1fr); gap:16px; }
+button, .button {
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 18px;
+  font-size: 15px;
+  font-weight: bold;
+  background: var(--aksen);
+  color: #342443;
+  text-decoration: none;
+  display: inline-block;
+}
+button:hover, .button:hover { filter: brightness(.96); }
+.container { max-width: 1100px; margin: auto; padding: 25px 18px 60px; }
+section { scroll-margin-top: 85px; margin: 25px 0; }
+.section-title { color: var(--utama); margin-bottom: 8px; }
+.subtitle { color: #6b6279; margin-top: 0; }
 .card {
-  background:#ffffffed;
-  border:1px solid #eee;
-  border-radius:22px;
-  padding:20px;
-  box-shadow:0 8px 22px #25316d12;
+  background: white;
+  border-radius: 16px;
+  padding: 22px;
+  margin: 16px 0;
+  box-shadow: 0 5px 18px #3826530d;
+  border: 1px solid #ece6f5;
 }
-.menuCard { min-height:150px; cursor:pointer; }
-.menuCard:hover { transform:translateY(-3px); }
-.menuCard .emoji { font-size:35px; }
-.menuCard h3 { color:var(--navy); font-size:22px; margin-top:5px; }
-.menuCard p,.small { font-size:12px; color:#777; line-height:1.7; }
-.contentPage { display:none; }
-.contentPage.active { display:block; }
-.callout {
-  border-left:5px solid var(--orange);
-  background:#fff7ea;
-  padding:15px;
-  border-radius:14px;
-  line-height:1.8;
+.card h3 { color: var(--utama); margin-top: 0; }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 16px;
 }
-.article p,.article li { font-size:14px; line-height:1.85; }
-.article h3 { color:var(--purple); font-size:23px; margin-top:10px; }
-.fact { background:var(--blue); padding:14px; border-radius:16px; margin:10px 0; line-height:1.8; }
-.tabs { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:14px; }
-.tab { background:#f0eff8; color:var(--navy); padding:10px; border-radius:12px; font-weight:700; }
-.tab.active { background:var(--navy); color:white; }
-.hidden { display:none!important; }
-.video-container {
-  position:relative;
-  width:100%;
-  aspect-ratio:16/9;
-  margin:16px 0;
+.icon { font-size: 32px; }
+.highlight {
+  border-left: 5px solid var(--aksen);
+  background: #fff9e9;
+  padding: 16px 20px;
+  border-radius: 8px;
+  margin: 18px 0;
 }
-.video-container iframe {
-  position:absolute;
-  width:100%;
-  height:100%;
-  border:0;
-  border-radius:18px;
+.purple {
+  background: #eee8fa;
+  border-left: 5px solid var(--kedua);
+  padding: 16px 20px;
+  border-radius: 8px;
 }
-.input {
-  width:100%;
-  padding:13px;
-  border:2px solid #e5e5ef;
-  border-radius:13px;
-  background:white;
+.timeline { border-left: 3px solid var(--kedua); margin-left: 10px; padding-left: 22px; }
+.timeline-item { position: relative; margin: 20px 0; }
+.timeline-item::before {
+  content: "";
+  width: 13px; height: 13px;
+  background: var(--aksen);
+  border: 3px solid white;
+  border-radius: 50%;
+  position: absolute;
+  left: -32px; top: 8px;
 }
-.form { display:grid; gap:12px; }
-.gameHero {
-  background:linear-gradient(135deg,#F28C28,#D95F59);
-  color:white;
-  border-radius:25px;
-  padding:24px;
+.pill {
+  display: inline-block;
+  background: #eee8fa;
+  color: var(--utama);
+  border-radius: 20px;
+  padding: 4px 11px;
+  font-size: 13px;
+  margin: 3px;
 }
-.gameHero h2 { font-size:32px; }
-.gameArea { margin-top:16px; }
-.notice {
-  padding:13px;
-  background:#f1f4ff;
-  border-radius:13px;
-  color:#4c5280;
-  font-size:13px;
-  line-height:1.7;
+ul li, ol li { margin-bottom: 8px; }
+table { border-collapse: collapse; width: 100%; }
+th, td { border: 1px solid #e4dced; padding: 12px; text-align: left; vertical-align: top; }
+th { background: #eee8fa; color: var(--utama); }
+.table-wrap { overflow-x: auto; }
+.question {
+  background: white;
+  border: 1px solid #e8e0f1;
+  padding: 18px;
+  margin: 14px 0;
+  border-radius: 12px;
 }
-.scoreboard { display:grid; gap:8px; }
-.scoreRow {
-  display:grid;
-  grid-template-columns:38px 1fr auto;
-  gap:10px;
-  align-items:center;
-  background:white;
-  border:1px solid #eee;
-  border-radius:13px;
-  padding:10px;
+.question p { font-weight: bold; margin-top: 0; }
+.question label { display: block; padding: 7px; cursor: pointer; }
+.question label:hover { background: #f5f0fc; }
+#hasilKuis {
+  padding: 18px;
+  margin-top: 18px;
+  border-radius: 12px;
+  display: none;
 }
-.rank { font-weight:900; color:var(--purple); }
-.choiceGrid { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
-.choice {
-  background:white;
-  border:2px solid #e8e8f0;
-  border-radius:14px;
-  padding:13px;
-  text-align:left;
-  color:var(--ink);
-  font-weight:600;
+footer {
+  background: #302044;
+  color: white;
+  padding: 30px 18px;
+  text-align: center;
 }
-.choice.correct { background:#ddf8e8; border-color:#35a56a; }
-.choice.wrong { background:#ffe1e4; border-color:#dc5963; }
-.timer {
-  font-family:"Baloo 2",sans-serif;
-  font-size:38px;
-  font-weight:800;
-  color:var(--orange);
-  text-align:center;
-}
-.progress { height:9px; background:#eee; border-radius:99px; overflow:hidden; }
-.progress div { height:100%; background:var(--orange); }
-.kasus { background:#fff2f4; padding:16px; border-radius:16px; line-height:1.8; }
-.footer { text-align:center; padding:30px 10px; color:#777; font-size:12px; }
-@media(max-width:800px) {
-  .grid { grid-template-columns:repeat(2,1fr); }
-  .grid2 { grid-template-columns:1fr; }
-  .navlinks { display:none; }
-}
-@media(max-width:560px) {
-  .grid,.choiceGrid { grid-template-columns:1fr; }
-  main { padding:16px 12px 40px; }
-  .hero { padding:28px 20px; }
-  .card { padding:16px; }
+.small { font-size: 13px; color: #746b80; }
+@media(max-width:600px) {
+  nav { position: static; }
+  nav a { font-size: 12px; padding: 6px 8px; }
+  .card { padding: 17px; }
+  th, td { padding: 9px; }
 }
 </style>
 </head>
 
 <body>
-<header class="header">
-  <nav class="nav">
-    <div class="brand">
-      <div class="brandIcon">☪</div>
-      <span>PAI • MADINAH</span>
-    </div>
-    <div class="navlinks">
-      <button onclick="showPage('home')">Beranda</button>
-      <button onclick="showPage('materi')">Materi</button>
-      <button onclick="showPage('pbl')">PBL</button>
-      <button onclick="showPage('game')">Game</button>
-    </div>
-  </nav>
+
+<header>
+  <div class="hero">
+    <span class="tag">MEDIA PEMBELAJARAN SKI • KELAS VII MTs</span>
+    <div class="arab">مِيثَاقُ الْمَدِينَةِ</div>
+    <h1>Piagam Madinah</h1>
+    <p>
+      Memahami sejarah lahirnya Piagam Madinah, isi pokoknya, serta
+      nilai persatuan, toleransi, keadilan, dan tanggung jawab dalam
+      kehidupan masyarakat yang beragam.
+    </p>
+    <a class="button" href="#pengertian">Mulai Belajar ↓</a>
+  </div>
 </header>
 
-<main>
-<!-- BERANDA -->
-<section id="home" class="contentPage active">
-  <div class="hero">
-    <span class="badge">MEDIA PEMBELAJARAN INTERAKTIF • PAI</span>
-    <h1>Piagam Madinah &amp; Masyarakat Majemuk</h1>
-    <p>Belajar sejarah Piagam Madinah, memahami prinsip hidup bersama dalam keberagaman, dan menghubungkannya dengan kehidupan Indonesia melalui Problem Based Learning.</p>
-    <div class="heroActions">
-      <button class="btn primary" onclick="showPage('materi')">📖 Mulai Belajar</button>
-      <button class="btn light" onclick="showPage('game')">🎮 Main Game</button>
-      <button class="btn ghost" onclick="showPage('pbl')">🧩 Tantangan PBL</button>
-    </div>
-  </div>
+<nav>
+  <a href="#pengertian">Pengertian</a>
+  <a href="#latar">Latar Belakang</a>
+  <a href="#proses">Sejarah</a>
+  <a href="#isi">Isi Piagam</a>
+  <a href="#nilai">Nilai Utama</a>
+  <a href="#penerapan">Penerapan</a>
+  <a href="#rangkuman">Rangkuman</a>
+  <a href="#kuis">Kuis</a>
+</nav>
 
-  <div class="section">
-    <div class="sectionTitle"><div><h2>Menu Utama</h2><p>Pilih aktivitas belajar</p></div></div>
-    <div class="grid">
-      <div class="card menuCard" onclick="showPage('video')"><div class="emoji">🎬</div><h3>Video Ajar</h3><p>Video tentang Piagam Madinah.</p></div>
-      <div class="card menuCard" onclick="showPage('materi')"><div class="emoji">📚</div><h3>Materi Lengkap</h3><p>Sejarah, isi, prinsip, dan relevansi.</p></div>
-      <div class="card menuCard" onclick="showPage('pbl')"><div class="emoji">🔎</div><h3>PBL</h3><p>Analisis masalah keberagaman.</p></div>
-      <div class="card menuCard" onclick="showPage('game')"><div class="emoji">⚡</div><h3>Kuis Kilat</h3><p>Kuis realtime antar-HP.</p></div>
-      <div class="card menuCard" onclick="showPage('kasus')"><div class="emoji">💬</div><h3>Studi Kasus</h3><p>Pilih tindakan yang tepat.</p></div>
-      <div class="card menuCard" onclick="showPage('refleksi')"><div class="emoji">💡</div><h3>Refleksi</h3><p>Hubungkan materi dengan keseharian.</p></div>
-    </div>
-  </div>
-  <div class="section grid2">
-    <div class="card">
-      <h3>🎯 Tujuan Pembelajaran</h3>
-      <ul>
-        <li>Menjelaskan latar belakang Piagam Madinah.</li>
-        <li>Mengidentifikasi prinsip hidup bersama.</li>
-        <li>Menganalisis kehidupan masyarakat majemuk.</li>
-        <li>Menghubungkan nilai Piagam Madinah dengan Indonesia.</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>🧠 Pertanyaan Pemantik</h3>
-      <div class="callout">Bagaimana kita tetap hidup rukun ketika memiliki perbedaan suku, agama, bahasa, dan kebiasaan?</div>
-    </div>
-  </div>
-</section>
+<main class="container">
 
-<!-- VIDEO -->
-<section id="video" class="contentPage">
+<section id="pengertian">
+  <h2 class="section-title">1. Pengertian Piagam Madinah</h2>
+  <p class="subtitle">Apa yang dimaksud dengan Piagam Madinah?</p>
+
   <div class="card">
-    <h2>🎬 Video Ajar Piagam Madinah</h2>
-    <p>Simak video berikut untuk memahami Piagam Madinah dan kehidupan masyarakat majemuk.</p>
-    <div class="video-container">
-      <iframe src="https://www.youtube-nocookie.com/embed/PbaGG7I85pc"
-        title="Video Ajar Piagam Madinah" loading="lazy"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen></iframe>
+    <p>
+      <b>Piagam Madinah</b> adalah kesepakatan atau dokumen yang dibuat
+      pada masa Nabi Muhammad saw. setelah beliau hijrah dari Makkah
+      ke Madinah. Piagam ini mengatur kehidupan bersama berbagai
+      kelompok masyarakat yang tinggal di Madinah, termasuk kaum
+      Muslim dari kalangan Muhajirin dan Ansar serta kelompok Yahudi.
+    </p>
+    <p>
+      Pada masa itu, Madinah dihuni oleh masyarakat yang memiliki
+      latar belakang suku, keyakinan, dan kepentingan yang berbeda.
+      Karena itu, diperlukan kesepakatan bersama agar kehidupan
+      masyarakat lebih tertib, aman, dan damai.
+    </p>
+    <div class="highlight">
+      <b>Intinya:</b> Piagam Madinah merupakan kesepakatan untuk
+      mengatur kehidupan bersama, menjaga keamanan, menyelesaikan
+      perselisihan, dan membangun tanggung jawab antarkelompok
+      masyarakat di Madinah.
     </div>
-    <p>📌 Setelah menonton, catat tiga prinsip hidup bersama yang dapat diterapkan di Indonesia.</p>
-    <a href="https://youtu.be/PbaGG7I85pc" target="_blank" rel="noopener noreferrer">▶️ Tonton di YouTube</a>
-    <p><button class="btn primary" onclick="showPage('home')">← Kembali ke Menu</button></p>
-  </div>
-</section>
-
-<!-- MATERI -->
-<section id="materi" class="contentPage">
-  <div class="sectionTitle">
-    <div><h2>📖 Materi Piagam Madinah</h2><p>Pilih bagian yang ingin dipelajari.</p></div>
-    <button class="btn primary" onclick="showPage('home')">← Menu</button>
-  </div>
-  <div class="tabs">
-    <button class="tab active" onclick="matTab(this,'m1')">Pengertian</button>
-    <button class="tab" onclick="matTab(this,'m2')">Latar Belakang</button>
-    <button class="tab" onclick="matTab(this,'m3')">Isi &amp; Prinsip</button>
-    <button class="tab" onclick="matTab(this,'m4')">Masyarakat Madinah</button>
-    <button class="tab" onclick="matTab(this,'m5')">Relevansi Indonesia</button>
-    <button class="tab" onclick="matTab(this,'m6')">Hikmah</button>
   </div>
 
-  <article id="m1" class="card article mat">
-    <h3>1. Pengertian Piagam Madinah</h3>
-    <p>Piagam Madinah adalah kesepakatan tertulis yang mengatur kehidupan bersama berbagai kelompok yang tinggal di Madinah pada masa Nabi Muhammad SAW. Piagam ini juga dikenal sebagai Shahifah Madinah.</p>
-    <div class="fact"><strong>Intinya:</strong> perbedaan tidak harus menjadi sumber konflik. Masyarakat dapat menyepakati aturan untuk menjaga keamanan, keadilan, dan tanggung jawab bersama.</div>
-  </article>
-
-  <article id="m2" class="card article mat hidden">
-    <h3>2. Latar Belakang</h3>
-    <p>Masyarakat Yatsrib, yang kemudian dikenal sebagai Madinah, terdiri atas kelompok-kelompok dengan latar belakang suku dan keyakinan yang beragam. Setelah hijrah pada 622 M, diperlukan kesepakatan untuk mengatur hubungan sosial dan menjaga keamanan bersama.</p>
-    <ol>
-      <li>Nabi Muhammad SAW hijrah ke Madinah.</li>
-      <li>Muhajirin dan Ansar membangun persaudaraan.</li>
-      <li>Kelompok masyarakat menyusun kesepakatan.</li>
-      <li>Kesepakatan digunakan untuk mengatur hak, kewajiban, dan keamanan.</li>
-    </ol>
-  </article>
-
-  <article id="m3" class="card article mat hidden">
-    <h3>3. Isi dan Prinsip Utama</h3>
-    <div class="fact"><strong>Persatuan:</strong> kelompok berbeda dapat bekerja sama.</div>
-    <div class="fact"><strong>Keadilan:</strong> hak dan kewajiban perlu dihormati.</div>
-    <div class="fact"><strong>Kebebasan beragama:</strong> perbedaan keyakinan dihormati sesuai kesepakatan.</div>
-    <div class="fact"><strong>Keamanan bersama:</strong> masyarakat bertanggung jawab menjaga ketertiban.</div>
-    <div class="fact"><strong>Musyawarah:</strong> masalah diselesaikan melalui komunikasi dan aturan.</div>
-    <div class="fact"><strong>Solidaritas:</strong> warga saling membantu dan tidak berbuat zalim.</div>
-  </article>
-
-  <article id="m4" class="card article mat hidden">
-    <h3>4. Masyarakat Madinah yang Majemuk</h3>
-    <p>Masyarakat Madinah terdiri atas komunitas yang memiliki latar belakang berbeda. Piagam Madinah menjadi salah satu kesepakatan yang mengatur hubungan sosial dan tanggung jawab di antara kelompok-kelompok tersebut.</p>
-    <ul>
-      <li>Keberagaman perlu dikelola dengan kesepakatan.</li>
-      <li>Hak berjalan bersama tanggung jawab.</li>
-      <li>Keamanan membutuhkan kerja sama.</li>
-      <li>Perbedaan perlu dihadapi dengan sikap saling menghormati.</li>
-    </ul>
-  </article>
-
-  <article id="m5" class="card article mat hidden">
-    <h3>5. Relevansi bagi Indonesia</h3>
-    <p>Indonesia memiliki keberagaman suku, bahasa, budaya, daerah, dan agama. Nilai Piagam Madinah dapat menjadi bahan refleksi untuk membangun kehidupan bersama, meskipun konteks sejarah Madinah berbeda dengan sistem kenegaraan Indonesia.</p>
-    <div class="fact"><strong>Persatuan:</strong> tetap bekerja sama meskipun berbeda.</div>
-    <div class="fact"><strong>Keadilan:</strong> tidak memihak karena latar belakang seseorang.</div>
-    <div class="fact"><strong>Toleransi:</strong> menghormati orang lain tanpa harus mengubah keyakinan sendiri.</div>
-    <div class="fact"><strong>Gotong royong:</strong> membantu untuk kepentingan bersama.</div>
-  </article>
-
-  <article id="m6" class="card article mat hidden">
-    <h3>6. Hikmah yang Dapat Diambil</h3>
-    <ol>
-      <li>Belajar hidup bersama dalam perbedaan.</li>
-      <li>Mengutamakan keadilan.</li>
-      <li>Menghormati hak dan menjalankan kewajiban.</li>
-      <li>Membangun komunikasi.</li>
-      <li>Menghindari penghinaan dan diskriminasi.</li>
-      <li>Bekerja sama untuk kepentingan bersama.</li>
-      <li>Menyelesaikan konflik melalui musyawarah.</li>
-    </ol>
-  </article>
-</section>
-
-<!-- PBL -->
-<section id="pbl" class="contentPage">
-  <div class="sectionTitle">
-    <div><h2>🔎 Tantangan PBL</h2><p>Analisis masalah keberagaman.</p></div>
-    <button class="btn primary" onclick="showPage('home')">← Menu</button>
-  </div>
-  <div class="grid2">
+  <div class="grid">
     <div class="card">
-      <h3>🧩 Langkah PBL</h3>
-      <ol>
-        <li>Memahami masalah keberagaman.</li>
-        <li>Membentuk kelompok dan menentukan masalah.</li>
-        <li>Membaca materi Piagam Madinah.</li>
-        <li>Menyusun solusi berdasarkan prinsip yang dipelajari.</li>
-        <li>Mempresentasikan dan mengevaluasi solusi.</li>
-      </ol>
+      <div class="icon">📜</div>
+      <h3>Sebuah kesepakatan</h3>
+      <p>Memuat aturan yang menjadi pedoman kehidupan masyarakat.</p>
     </div>
     <div class="card">
-      <h3>🎯 Produk Kelompok</h3>
-      <p>Buat “Piagam Kelas Harmonis” yang memuat minimal enam aturan untuk menghargai perbedaan, mencegah perundungan, membangun gotong royong, dan menyelesaikan konflik.</p>
-      <button class="btn primary" onclick="showPage('game')">Lanjut ke Kuis ⚡</button>
+      <div class="icon">🤝</div>
+      <h3>Mengatur hubungan</h3>
+      <p>Mengatur hak, kewajiban, kerja sama, dan tanggung jawab bersama.</p>
     </div>
-  </div>
-  <div class="card section">
-    <h3>📋 LKPD Digital — Analisis Kasus</h3>
-    <div class="kasus">Dalam kerja kelompok, beberapa siswa hanya mau bekerja dengan teman yang dianggap satu kelompok. Siswa lainnya diabaikan sehingga tugas tidak selesai dan muncul pertengkaran.</div>
-    <p><label for="lk1">1. Apa masalah utamanya?</label></p>
-    <textarea id="lk1" class="input" rows="3"></textarea>
-    <p><label for="lk2">2. Prinsip Piagam Madinah apa yang relevan?</label></p>
-    <textarea id="lk2" class="input" rows="3"></textarea>
-    <p><label for="lk3">3. Apa solusi yang kelompokmu tawarkan?</label></p>
-    <textarea id="lk3" class="input" rows="3"></textarea>
-    <p><label for="lk4">4. Bagaimana penerapannya di sekolah?</label></p>
-    <textarea id="lk4" class="input" rows="3"></textarea>
-    <button class="btn primary" onclick="saveLKPD()">💾 Simpan Jawaban</button>
-    <p class="small">Jawaban disimpan pada browser di perangkat ini.</p>
+    <div class="card">
+      <div class="icon">🕊️</div>
+      <h3>Menjaga kedamaian</h3>
+      <p>Mendorong kehidupan yang tertib dan menghindari permusuhan.</p>
+    </div>
   </div>
 </section>
 
-<!-- GAME LINTAS HP -->
-<section id="game" class="contentPage">
-  <div class="gameHero">
-    <h2>🏆 Siapa Paling Cepat?</h2>
-    <p>Guru membuat room, kemudian siswa masuk menggunakan kode yang sama.</p>
+<section id="latar">
+  <h2 class="section-title">2. Latar Belakang Piagam Madinah</h2>
+  <p class="subtitle">Mengapa Piagam Madinah diperlukan?</p>
+
+  <div class="card">
+    <p>
+      Sebelum Islam berkembang di Madinah, kota tersebut dikenal
+      dengan nama Yatsrib. Penduduknya terdiri atas berbagai suku
+      Arab, terutama Aus dan Khazraj, serta sejumlah kelompok Yahudi.
+      Hubungan antarkelompok tidak selalu berjalan damai. Perselisihan
+      dan persaingan pernah terjadi, termasuk konflik antara Aus dan
+      Khazraj.
+    </p>
+    <p>
+      Ketika Nabi Muhammad saw. hijrah ke Madinah pada tahun 622 M,
+      beliau tidak hanya membimbing umat Islam dalam urusan agama,
+      tetapi juga membantu menata kehidupan sosial masyarakat.
+      Masyarakat membutuhkan aturan yang dapat menjadi pedoman
+      bersama, memperjelas tanggung jawab, dan menjaga keamanan kota.
+    </p>
+    <p>
+      Dalam keadaan tersebut, Piagam Madinah menjadi salah satu
+      langkah penting untuk membangun keteraturan kehidupan bersama.
+      Piagam ini membantu mengatur hubungan antarkelompok dan
+      tanggung jawab dalam menghadapi ancaman terhadap Madinah.
+    </p>
   </div>
-  <div class="gameArea grid2">
-    <div class="card" id="joinCard">
-      <h3>📱 Masuk Permainan</h3>
-      <div class="form">
-        <input id="playerName" class="input" placeholder="Nama kamu" maxlength="30">
-        <input id="roomCode" class="input" placeholder="Kode room, misalnya MADINAH8" maxlength="12">
-        <button class="btn primary" onclick="joinGame()">🚀 Masuk Room</button>
-        <button class="btn" style="background:#eeeafb;color:#5B4B8A" onclick="hostGame()">👩‍🏫 Buat Room / Mode Guru</button>
+
+  <h3 class="section-title">Faktor yang melatarbelakanginya</h3>
+  <div class="grid">
+    <div class="card">
+      <h3>1. Masyarakat yang beragam</h3>
+      <p>Penduduk Madinah memiliki perbedaan suku, agama, dan kepentingan.</p>
+    </div>
+    <div class="card">
+      <h3>2. Konflik antarkelompok</h3>
+      <p>Perselisihan sebelumnya membuat masyarakat memerlukan aturan bersama.</p>
+    </div>
+    <div class="card">
+      <h3>3. Keamanan kota</h3>
+      <p>Warga membutuhkan kerja sama untuk menjaga keamanan dan ketertiban.</p>
+    </div>
+    <div class="card">
+      <h3>4. Kehidupan yang teratur</h3>
+      <p>Hak, kewajiban, dan penyelesaian perselisihan perlu diatur dengan jelas.</p>
+    </div>
+  </div>
+</section>
+
+<section id="proses">
+  <h2 class="section-title">3. Sejarah dan Proses Terbentuknya</h2>
+  <p class="subtitle">Peristiwa penting yang berkaitan dengan Piagam Madinah</p>
+
+  <div class="card">
+    <div class="timeline">
+      <div class="timeline-item">
+        <h3>Hijrah ke Madinah — 622 M</h3>
+        <p>
+          Nabi Muhammad saw. dan para sahabat berhijrah dari Makkah
+          ke Madinah. Peristiwa ini menjadi awal penting pembentukan
+          masyarakat Muslim di Madinah.
+        </p>
       </div>
-      <p id="firebaseStatus" class="notice">Status: menghubungkan ke Firebase...</p>
-    </div>
-    <div class="card">
-      <h3>📊 Papan Skor</h3>
-      <div id="scoreboard" class="scoreboard"><div class="notice">Belum ada pemain.</div></div>
+      <div class="timeline-item">
+        <h3>Membangun persaudaraan</h3>
+        <p>
+          Nabi mempersaudarakan kaum Muhajirin, yaitu kaum Muslim
+          yang berhijrah dari Makkah, dengan kaum Ansar, yaitu kaum
+          Muslim penduduk Madinah yang membantu mereka.
+        </p>
+      </div>
+      <div class="timeline-item">
+        <h3>Mengatur kehidupan masyarakat</h3>
+        <p>
+          Nabi Muhammad saw. menyusun kesepakatan yang mengatur
+          hubungan berbagai kelompok, kewajiban bersama, serta
+          perlindungan dan keamanan masyarakat.
+        </p>
+      </div>
+      <div class="timeline-item">
+        <h3>Membangun masyarakat yang tertib</h3>
+        <p>
+          Piagam menjadi salah satu dasar pengaturan kehidupan
+          masyarakat Madinah yang terdiri atas berbagai kelompok.
+        </p>
+      </div>
     </div>
   </div>
-  <div id="gamePanel" class="card section">
-    <div class="notice">Belum masuk room. Setelah masuk, pertanyaan akan muncul di sini.</div>
+
+  <div class="purple">
+    <b>Catatan sejarah:</b> Piagam Madinah sering disebut sebagai
+    konstitusi atau dokumen politik awal dalam sejarah Islam.
+    Namun, waktu penyusunan, susunan dokumen, dan jumlah pasalnya
+    dibahas secara berbeda dalam kajian sejarah. Karena itu, jumlah
+    pasal tidak selalu sama pada setiap buku atau sumber.
   </div>
 </section>
 
-<!-- STUDI KASUS -->
-<section id="kasus" class="contentPage">
-  <div class="sectionTitle">
-    <div><h2>💬 Game Studi Kasus</h2><p>Pilih tindakan yang paling tepat.</p></div>
-    <button class="btn primary" onclick="showPage('home')">← Menu</button>
-  </div>
-  <div class="card"><div id="caseGame"></div></div>
-</section>
+<section id="pihak">
+  <h2 class="section-title">4. Kelompok Masyarakat yang Terlibat</h2>
 
-<!-- REFLEKSI -->
-<section id="refleksi" class="contentPage">
-  <div class="sectionTitle">
-    <div><h2>💡 Refleksi</h2><p>Hubungkan materi dengan kehidupan nyata.</p></div>
-    <button class="btn primary" onclick="showPage('home')">← Menu</button>
-  </div>
-  <div class="grid2">
+  <div class="grid">
     <div class="card">
-      <h3>3-2-1 Refleksi</h3>
-      <p>3 hal baru yang saya pelajari:</p><textarea class="input" rows="3"></textarea>
-      <p>2 nilai yang bisa saya terapkan:</p><textarea class="input" rows="3"></textarea>
-      <p>1 tindakan yang akan saya lakukan:</p><textarea class="input" rows="3"></textarea>
+      <h3>Kaum Muhajirin</h3>
+      <p>
+        Kaum Muslim yang meninggalkan Makkah dan berhijrah ke Madinah
+        untuk menjaga agama dan membangun kehidupan baru.
+      </p>
     </div>
     <div class="card">
-      <h3>🌟 Kalimat Penutup</h3>
-      <div class="callout">“Berbeda bukan alasan untuk bermusuhan. Kita dapat bekerja sama dengan tetap menghargai identitas dan keyakinan masing-masing.”</div>
+      <h3>Kaum Ansar</h3>
+      <p>
+        Penduduk Madinah dari kalangan Muslim yang menyambut dan
+        membantu kaum Muhajirin.
+      </p>
+    </div>
+    <div class="card">
+      <h3>Kelompok Yahudi</h3>
+      <p>
+        Kelompok masyarakat Yahudi yang hidup di Madinah dan
+        mempunyai hubungan sosial serta perjanjian dengan masyarakat
+        yang diatur dalam Piagam.
+      </p>
+    </div>
+    <div class="card">
+      <h3>Nabi Muhammad saw.</h3>
+      <p>
+        Berperan sebagai pemimpin masyarakat dan pihak yang
+        membimbing pembentukan kesepakatan untuk mengatur kehidupan
+        bersama di Madinah.
+      </p>
     </div>
   </div>
 </section>
 
-<div class="footer">Media Pembelajaran Interaktif PAI • Piagam Madinah &amp; Kehidupan Masyarakat Majemuk</div>
+<section id="isi">
+  <h2 class="section-title">5. Isi Pokok Piagam Madinah</h2>
+  <p>
+    Piagam Madinah memiliki sejumlah ketentuan yang mengatur kehidupan
+    masyarakat. Berikut isi pokoknya dengan bahasa sederhana.
+  </p>
+
+  <div class="card">
+    <h3>1. Persatuan masyarakat</h3>
+    <p>
+      Kelompok-kelompok yang terikat dalam Piagam mempunyai tanggung
+      jawab untuk menjaga kehidupan bersama. Perbedaan kelompok tidak
+      boleh menjadi alasan untuk melakukan permusuhan tanpa dasar.
+    </p>
+    <span class="pill">Persatuan</span>
+    <span class="pill">Kebersamaan</span>
+  </div>
+
+  <div class="card">
+    <h3>2. Kebebasan menjalankan agama</h3>
+    <p>
+      Piagam mengakui keberadaan kelompok Yahudi dalam masyarakat
+      Madinah dan mengatur hubungan mereka dengan kaum Muslim.
+      Setiap kelompok memiliki agama masing-masing sesuai ketentuan
+      perjanjian yang berlaku.
+    </p>
+    <span class="pill">Kehidupan beragama</span>
+    <span class="pill">Saling menghormati</span>
+  </div>
+
+  <div class="card">
+    <h3>3. Hak dan kewajiban</h3>
+    <p>
+      Kehidupan masyarakat tidak hanya berkaitan dengan hak, tetapi
+      juga kewajiban. Setiap kelompok harus menjalankan tanggung
+      jawabnya dan tidak merugikan pihak lain.
+    </p>
+    <span class="pill">Tanggung jawab</span>
+    <span class="pill">Keadilan</span>
+  </div>
+
+  <div class="card">
+    <h3>4. Menjaga keamanan Madinah</h3>
+    <p>
+      Keamanan kota menjadi kepentingan bersama. Kelompok yang terikat
+      dalam Piagam memiliki kewajiban sesuai perjanjian untuk
+      menghadapi ancaman dan tidak membantu pihak yang memusuhi
+      masyarakat Madinah.
+    </p>
+    <span class="pill">Keamanan</span>
+    <span class="pill">Kerja sama</span>
+  </div>
+
+  <div class="card">
+    <h3>5. Menyelesaikan perselisihan</h3>
+    <p>
+      Perselisihan yang dapat mengancam kehidupan bersama perlu
+      diselesaikan melalui aturan dan pihak yang berwenang, bukan
+      dengan tindakan sewenang-wenang atau balas dendam.
+    </p>
+    <span class="pill">Musyawarah</span>
+    <span class="pill">Penyelesaian konflik</span>
+  </div>
+
+  <div class="card">
+    <h3>6. Menegakkan keadilan</h3>
+    <p>
+      Anggota masyarakat tidak boleh bertindak semaunya sendiri.
+      Ketentuan dalam Piagam menekankan tanggung jawab terhadap
+      tindakan yang dilakukan serta perlunya menjaga hak pihak lain.
+    </p>
+    <span class="pill">Keadilan</span>
+    <span class="pill">Tertib sosial</span>
+  </div>
+
+  <div class="card">
+    <h3>7. Membela masyarakat dari ancaman</h3>
+    <p>
+      Pertahanan Madinah menjadi salah satu kepentingan bersama.
+      Kerja sama dalam menjaga keamanan dilakukan berdasarkan
+      ketentuan dan tanggung jawab yang diatur dalam Piagam.
+    </p>
+    <span class="pill">Perlindungan</span>
+    <span class="pill">Persatuan</span>
+  </div>
+
+  <div class="card">
+    <h3>8. Menolak pengkhianatan terhadap perjanjian</h3>
+    <p>
+      Kesepakatan akan berjalan jika pihak-pihak yang terikat
+      melaksanakan kewajibannya. Oleh karena itu, kesetiaan terhadap
+      perjanjian dan larangan membantu musuh menjadi bagian penting
+      dari pengaturan hubungan masyarakat.
+    </p>
+    <span class="pill">Amanah</span>
+    <span class="pill">Menepati janji</span>
+  </div>
+
+  <div class="highlight">
+    <b>Penting untuk dipahami:</b> Penjelasan di atas merupakan
+    ringkasan tema-tema utama Piagam Madinah, bukan kutipan kata
+    demi kata dari setiap pasal. Untuk tugas yang memerlukan bunyi
+    pasal asli, gunakan terjemahan Piagam Madinah dari buku sejarah
+    atau sumber akademik yang dirujuk.
+  </div>
+</section>
+
+<section id="nilai">
+  <h2 class="section-title">6. Nilai-Nilai Utama Piagam Madinah</h2>
+  <p class="subtitle">Nilai yang dapat dipelajari dari sejarah Piagam Madinah</p>
+
+  <div class="grid">
+    <div class="card">
+      <div class="icon">🤝</div>
+      <h3>Persatuan</h3>
+      <p>
+        Mengutamakan kehidupan bersama dan tidak mudah terpecah
+        hanya karena perbedaan.
+      </p>
+    </div>
+    <div class="card">
+      <div class="icon">⚖️</div>
+      <h3>Keadilan</h3>
+      <p>
+        Memperlakukan orang secara adil dan tidak mengambil hak
+        orang lain.
+      </p>
+    </div>
+    <div class="card">
+      <div class="icon">🕊️</div>
+      <h3>Toleransi</h3>
+      <p>
+        Menghormati perbedaan keyakinan dan tidak memaksakan
+        kehendak kepada orang lain.
+      </p>
+    </div>
+    <div class="card">
+      <div class="icon">🛡️</div>
+      <h3>Tanggung jawab</h3>
+      <p>
+        Melaksanakan kewajiban dan ikut menjaga keamanan serta
+        ketertiban bersama.
+      </p>
+    </div>
+    <div class="card">
+      <div class="icon">💬</div>
+      <h3>Penyelesaian konflik</h3>
+      <p>
+        Menyelesaikan masalah dengan cara yang benar, tidak
+        menggunakan kekerasan atau balas dendam.
+      </p>
+    </div>
+    <div class="card">
+      <div class="icon">📜</div>
+      <h3>Menepati perjanjian</h3>
+      <p>
+        Memegang komitmen dan menjalankan kesepakatan yang
+        telah dibuat bersama.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section id="perbandingan">
+  <h2 class="section-title">7. Perbedaan Sebelum dan Sesudah Piagam</h2>
+
+  <div class="card table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Aspek</th>
+          <th>Sebelum pengaturan bersama</th>
+          <th>Melalui Piagam Madinah</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Hubungan masyarakat</td>
+          <td>Perselisihan antarkelompok pernah terjadi.</td>
+          <td>Hubungan diatur melalui kesepakatan dan tanggung jawab.</td>
+        </tr>
+        <tr>
+          <td>Keamanan</td>
+          <td>Ancaman dapat memengaruhi berbagai kelompok.</td>
+          <td>Keamanan menjadi kepentingan bersama sesuai perjanjian.</td>
+        </tr>
+        <tr>
+          <td>Perbedaan</td>
+          <td>Perbedaan suku dan keyakinan dapat menjadi sumber ketegangan.</td>
+          <td>Perbedaan dikelola melalui aturan hubungan antarkelompok.</td>
+        </tr>
+        <tr>
+          <td>Penyelesaian masalah</td>
+          <td>Perselisihan dapat memperpanjang permusuhan.</td>
+          <td>Perselisihan yang mengancam masyarakat diatur penyelesaiannya.</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="small">
+      Tabel ini merupakan gambaran umum, bukan berarti seluruh
+      konflik langsung hilang setelah Piagam diberlakukan.
+    </p>
+  </div>
+</section>
+
+<section id="penerapan">
+  <h2 class="section-title">8. Relevansi Piagam Madinah dalam Kehidupan Sekarang</h2>
+  <p>
+    Nilai-nilai Piagam Madinah masih dapat dipelajari untuk menghadapi
+    kehidupan masyarakat yang beragam, termasuk lingkungan sekolah,
+    keluarga, dan masyarakat Indonesia.
+  </p>
+
+  <div class="card">
+    <h3>A. Di lingkungan sekolah</h3>
+    <ul>
+      <li>Menghargai teman yang berbeda suku, budaya, dan kebiasaan.</li>
+      <li>Tidak mengejek atau mengucilkan teman karena perbedaan.</li>
+      <li>Menyelesaikan perselisihan melalui diskusi atau bantuan guru.</li>
+      <li>Mematuhi tata tertib dan melaksanakan tugas kelompok.</li>
+      <li>Menjaga fasilitas sekolah dan menciptakan suasana belajar yang aman.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>B. Di lingkungan keluarga</h3>
+    <ul>
+      <li>Menghargai pendapat anggota keluarga.</li>
+      <li>Membagi tugas rumah secara bertanggung jawab.</li>
+      <li>Menyelesaikan perbedaan pendapat dengan komunikasi yang baik.</li>
+      <li>Menepati janji dan menjaga kepercayaan.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>C. Di lingkungan masyarakat</h3>
+    <ul>
+      <li>Bekerja sama menjaga kebersihan dan keamanan lingkungan.</li>
+      <li>Menghormati tetangga yang memiliki latar belakang berbeda.</li>
+      <li>Mengikuti aturan yang berlaku dan tidak main hakim sendiri.</li>
+      <li>Mengutamakan dialog dalam menyelesaikan masalah.</li>
+      <li>Berpartisipasi dalam kegiatan sosial untuk kepentingan bersama.</li>
+    </ul>
+  </div>
+
+  <div class="purple">
+    <b>Hubungannya dengan PAI:</b> Piagam Madinah dapat dikaji dalam
+    pembelajaran Sejarah Kebudayaan Islam untuk memahami keteladanan
+    Nabi Muhammad saw. dalam mengatur masyarakat. Nilai keadilan,
+    amanah, persaudaraan, dan sikap menghormati sesama juga berkaitan
+    dengan pembentukan akhlak peserta didik.
+  </div>
+</section>
+
+<section id="contoh">
+  <h2 class="section-title">9. Contoh Kasus dan Cara Menyelesaikannya</h2>
+
+  <div class="card">
+    <span class="pill">Kasus 1</span>
+    <h3>Perbedaan pendapat saat kerja kelompok</h3>
+    <p>
+      Dua siswa berbeda pendapat tentang pembagian tugas. Keduanya
+      merasa pendapatnya paling benar sehingga pekerjaan kelompok
+      terhambat.
+    </p>
+    <p><b>Pertanyaan:</b> Bagaimana cara menyelesaikan masalah tersebut?</p>
+    <details>
+      <summary><b>Lihat contoh jawaban</b></summary>
+      <p>
+        Mereka sebaiknya mendengarkan pendapat satu sama lain,
+        membicarakan pembagian tugas secara adil, menentukan keputusan
+        bersama, dan melaksanakan tanggung jawab masing-masing.
+        Cara ini mencerminkan kerja sama, keadilan, dan penyelesaian
+        konflik secara damai.
+      </p>
+    </details>
+  </div>
+
+  <div class="card">
+    <span class="pill">Kasus 2</span>
+    <h3>Mengejek teman karena perbedaan</h3>
+    <p>
+      Seorang siswa diejek karena memiliki kebiasaan atau latar
+      belakang keluarga yang berbeda dari teman-temannya.
+    </p>
+    <p><b>Pertanyaan:</b> Nilai apa yang perlu diterapkan?</p>
+    <details>
+      <summary><b>Lihat contoh jawaban</b></summary>
+      <p>
+        Nilai menghormati perbedaan, menjaga martabat sesama, dan
+        keadilan perlu diterapkan. Siswa harus menghentikan ejekan,
+        meminta maaf jika menyakiti orang lain, dan meminta bantuan
+        guru apabila masalah terus berlanjut.
+      </p>
+    </details>
+  </div>
+
+  <div class="card">
+    <span class="pill">Kasus 3</span>
+    <h3>Melanggar kesepakatan kelas</h3>
+    <p>
+      Sebuah kelompok telah sepakat membersihkan kelas sesuai jadwal,
+      tetapi salah satu anggota tidak melaksanakan tugasnya tanpa
+      memberi kabar.
+    </p>
+    <p><b>Pertanyaan:</b> Bagaimana menghubungkannya dengan Piagam Madinah?</p>
+    <details>
+      <summary><b>Lihat contoh jawaban</b></summary>
+      <p>
+        Kesepakatan harus dilaksanakan dengan tanggung jawab.
+        Kelompok dapat mengingatkan teman tersebut secara baik,
+        mencari tahu kendalanya, dan menyepakati solusi. Hal ini
+        mencerminkan amanah, tanggung jawab, dan pentingnya menaati
+        kesepakatan bersama.
+      </p>
+    </details>
+  </div>
+</section>
+
+<section id="rangkuman">
+  <h2 class="section-title">10. Rangkuman Materi</h2>
+
+  <div class="card">
+    <ol>
+      <li>Piagam Madinah merupakan kesepakatan yang mengatur kehidupan berbagai kelompok masyarakat di Madinah pada masa Nabi Muhammad saw.</li>
+      <li>Piagam berkaitan dengan keadaan Madinah yang memiliki penduduk dari beragam suku dan keyakinan serta membutuhkan aturan bersama.</li>
+      <li>Nabi Muhammad saw. berperan penting dalam membangun kehidupan masyarakat dan mengatur hubungan antarkelompok.</li>
+      <li>Isi pokok Piagam mencakup hubungan antarkelompok, hak dan kewajiban, keamanan, penyelesaian perselisihan, dan tanggung jawab terhadap perjanjian.</li>
+      <li>Nilai yang dapat dipelajari antara lain persatuan, keadilan, toleransi, amanah, tanggung jawab, dan kerja sama.</li>
+      <li>Nilai tersebut dapat diterapkan di sekolah, keluarga, dan masyarakat dengan menghargai perbedaan serta menyelesaikan masalah secara damai.</li>
+    </ol>
+  </div>
+
+  <div class="highlight">
+    <h3>Pesan Pembelajaran</h3>
+    <p>
+      Perbedaan bukan alasan untuk saling bermusuhan. Kita perlu
+      belajar menghormati sesama, menaati kesepakatan, bersikap adil,
+      dan ikut menjaga kedamaian lingkungan. Itulah salah satu
+      pelajaran penting yang dapat diambil dari Piagam Madinah.
+    </p>
+  </div>
+</section>
+
+<section id="kuis">
+  <h2 class="section-title">11. Kuis Pemahaman</h2>
+  <p class="subtitle">Jawablah pertanyaan berikut untuk menguji pemahamanmu.</p>
+
+  <form id="formKuis">
+    <div class="question">
+      <p>1. Apa tujuan utama Piagam Madinah?</p>
+      <label><input type="radio" name="q1" value="a"> Mengatur kehidupan bersama dan hubungan antarkelompok masyarakat</label>
+      <label><input type="radio" name="q1" value="b"> Menghapus seluruh perbedaan masyarakat</label>
+      <label><input type="radio" name="q1" value="c"> Membatasi semua kegiatan masyarakat</label>
+    </div>
+
+    <div class="question">
+      <p>2. Siapakah kaum Muhajirin?</p>
+      <label><input type="radio" name="q2" value="a"> Penduduk Madinah yang membantu kaum Muslim</label>
+      <label><input type="radio" name="q2" value="b"> Kaum Muslim yang berhijrah dari Makkah ke Madinah</label>
+      <label><input type="radio" name="q2" value="c"> Seluruh kelompok Yahudi di Madinah</label>
+    </div>
+
+    <div class="question">
+      <p>3. Mengapa Piagam Madinah diperlukan?</p>
+      <label><input type="radio" name="q3" value="a"> Karena masyarakat Madinah memiliki latar belakang yang beragam dan memerlukan aturan bersama</label>
+      <label><input type="radio" name="q3" value="b"> Karena semua penduduk memiliki pendapat yang sama</label>
+      <label><input type="radio" name="q3" value="c"> Karena masyarakat tidak membutuhkan kerja sama</label>
+    </div>
+
+    <div class="question">
+      <p>4. Sikap yang sesuai dengan nilai Piagam Madinah adalah ...</p>
+      <label><input type="radio" name="q4" value="a"> Memaksakan pendapat kepada teman</label>
+      <label><input type="radio" name="q4" value="b"> Mengejek orang yang berbeda</label>
+      <label><input type="radio" name="q4" value="c"> Menghargai perbedaan dan menaati kesepakatan</label>
+    </div>
+
+    <div class="question">
+      <p>5. Jika terjadi perselisihan, tindakan yang tepat adalah ...</p>
+      <label><input type="radio" name="q5" value="a"> Membalas perbuatan teman</label>
+      <label><input type="radio" name="q5" value="b"> Menyelesaikannya dengan dialog dan bantuan pihak yang tepat</label>
+      <label><input type="radio" name="q5" value="c"> Membiarkan masalah menjadi semakin besar</label>
+    </div>
+
+    <div class="question">
+      <p>6. Siapakah kaum Ansar?</p>
+      <label><input type="radio" name="q6" value="a"> Kaum Muslim penduduk Madinah yang membantu kaum Muhajirin</label>
+      <label><input type="radio" name="q6" value="b"> Kaum Muslim yang meninggalkan Makkah</label>
+      <label><input type="radio" name="q6" value="c"> Para pedagang dari Romawi</label>
+    </div>
+
+    <div class="question">
+      <p>7. Salah satu hal yang diatur dalam Piagam Madinah adalah ...</p>
+      <label><input type="radio" name="q7" value="a"> Cara menentukan nilai ujian sekolah</label>
+      <label><input type="radio" name="q7" value="b"> Hubungan antarkelompok dan keamanan masyarakat</label>
+      <label><input type="radio" name="q7" value="c"> Jadwal kegiatan belajar di kelas</label>
+    </div>
+
+    <div class="question">
+      <p>8. Menepati kesepakatan mencerminkan sikap ...</p>
+      <label><input type="radio" name="q8" value="a"> Amanah dan tanggung jawab</label>
+      <label><input type="radio" name="q8" value="b"> Sombong dan egois</label>
+      <label><input type="radio" name="q8" value="c"> Tidak peduli</label>
+    </div>
+
+    <div class="question">
+      <p>9. Salah satu nilai yang dapat dipelajari dari Piagam Madinah adalah ...</p>
+      <label><input type="radio" name="q9" value="a"> Permusuhan</label>
+      <label><input type="radio" name="q9" value="b"> Diskriminasi</label>
+      <label><input type="radio" name="q9" value="c"> Keadilan dan kerja sama</label>
+    </div>
+
+    <div class="question">
+      <p>10. Contoh penerapan nilai Piagam Madinah di sekolah adalah ...</p>
+      <label><input type="radio" name="q10" value="a"> Mengucilkan teman yang berbeda</label>
+      <label><input type="radio" name="q10" value="b"> Membagi tugas kelompok secara adil</label>
+      <label><input type="radio" name="q10" value="c"> Mengabaikan aturan kelas</label>
+    </div>
+
+    <button type="submit">Periksa Jawaban</button>
+    <button type="button" onclick="ulangKuis()" style="background:#e9e2f3;">Ulangi Kuis</button>
+  </form>
+
+  <div id="hasilKuis" aria-live="polite"></div>
+</section>
+
+<section id="referensi">
+  <h2 class="section-title">12. Referensi untuk Belajar Lebih Lanjut</h2>
+  <div class="card">
+    <p>Untuk memperdalam materi dan memeriksa rincian sejarah, gunakan sumber berikut:</p>
+    <ol>
+      <li>
+        <b>Al-Qur'an dan Terjemahannya.</b>
+        Sebagai sumber untuk mempelajari nilai keadilan, persaudaraan,
+        amanah, dan kehidupan bermasyarakat.
+      </li>
+      <li>
+        <b>Muhammad Hamidullah, <i>The First Written Constitution in the World</i>.</b>
+        Kajian tentang Piagam Madinah dan kedudukannya dalam sejarah.
+      </li>
+      <li>
+        <b>Ibn Ishaq, melalui penyuntingan dan terjemahan karya tentang
+        kehidupan Nabi Muhammad saw.</b>
+        Salah satu sumber sejarah awal yang digunakan dalam kajian
+        kehidupan Nabi.
+      </li>
+      <li>
+        <b>Buku Sejarah Kebudayaan Islam (SKI) MTs.</b>
+        Gunakan buku yang sesuai dengan kurikulum dan edisi yang
+        dipakai sekolah sebagai acuan materi pembelajaran.
+      </li>
+    </ol>
+    <p class="small">
+      Catatan: rincian bibliografi, halaman, dan terjemahan dokumen
+      perlu diperiksa sesuai edisi sumber yang benar-benar digunakan.
+    </p>
+  </div>
+</section>
+
 </main>
 
-<script type="module">
-import { initializeApp }
-  from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
-import {
-  getDatabase, ref, set, update, onValue, get,
-  serverTimestamp, onDisconnect, remove
-} from "https://www.gstatic.com/firebasejs/12.19.0/firebase-database.js";
+<footer>
+  <h2>Alhamdulillah, Materi Selesai Dipelajari</h2>
+  <p>Belajar sejarah, meneladani akhlak, dan membangun kehidupan yang damai.</p>
+  <p>Materi Pembelajaran Sejarah Kebudayaan Islam (SKI)</p>
+  <button onclick="window.scrollTo({top:0, behavior:'smooth'})">↑ Kembali ke Atas</button>
+</footer>
 
-/* Ganti konfigurasi ini jika memakai project Firebase lain. */
-const firebaseConfig = {
-  apiKey: "AIzaSyAQWDr7s3nH42yESrc8c5lzwUtoKJb42Q",
-  authDomain: "kieya-cc697.firebaseapp.com",
-  databaseURL: "https://kieya-cc697-default-rtdb.asia-southeast1.firebasedatabase.app",
-  projectId: "kieya-cc697",
-  storageBucket: "kieya-cc697.firebasestorage.app",
-  messagingSenderId: "525059189413",
-  appId: "1:525059189413:web:fc8a2a0ce6c6442a193b4c"
+<script>
+const kunciJawaban = {
+  q1: "a",
+  q2: "b",
+  q3: "a",
+  q4: "c",
+  q5: "b",
+  q6: "a",
+  q7: "b",
+  q8: "a",
+  q9: "c",
+  q10: "b"
 };
 
-let db = null;
-let currentRoom = "";
-let currentPlayer = "";
-let isHost = false;
-let offset = 0;
-let answerLocked = false;
-let unsubscribeRoom = null;
-let timerInt = null;
+document.getElementById("formKuis").addEventListener("submit", function(event) {
+  event.preventDefault();
 
-const questions = [
-  {q:"Apa tujuan utama Piagam Madinah?",a:["Menghapus semua perbedaan","Mengatur hidup bersama berbagai kelompok di Madinah","Memindahkan pusat pemerintahan ke Makkah","Membatasi perdagangan"],c:1},
-  {q:"Masyarakat Madinah pada masa Nabi Muhammad SAW bersifat...",a:["Seragam","Majemuk","Tertutup","Tanpa kelompok"],c:1},
-  {q:"Salah satu prinsip penting Piagam Madinah adalah...",a:["Diskriminasi","Keadilan","Permusuhan","Pemaksaan"],c:1},
-  {q:"Sikap yang sesuai dengan masyarakat majemuk adalah...",a:["Menghormati perbedaan","Memaksa orang lain sama","Mengucilkan kelompok lain","Menyebarkan ejekan"],c:0},
-  {q:"Tanggung jawab bersama di sekolah ditunjukkan dengan...",a:["Membiarkan teman kesulitan","Menolak kerja kelompok","Bekerja sama menyelesaikan tugas","Memilih teman berdasarkan suku"],c:2},
-  {q:"Jika terjadi konflik karena perbedaan, langkah yang tepat adalah...",a:["Membalas","Musyawarah dan mencari solusi adil","Menyebarkan masalah","Menghindari semua orang"],c:1},
-  {q:"Nilai Piagam Madinah yang relevan bagi Indonesia adalah...",a:["Persatuan dan keadilan","Permusuhan antarkelompok","Penghapusan budaya","Pemaksaan keyakinan"],c:0},
-  {q:"Menghormati teman berbeda agama berarti...",a:["Harus mengikuti agamanya","Menghargai haknya tanpa mengubah keyakinan sendiri","Tidak boleh berteman","Harus mengubah keyakinan sendiri"],c:1},
-  {q:"Contoh gotong royong di kelas adalah...",a:["Hanya satu siswa bekerja","Semua anggota berkontribusi sesuai kesepakatan","Siswa tertentu tidak boleh ikut","Memilih anggota berdasarkan daerah"],c:1},
-  {q:"Pelajaran utama Piagam Madinah adalah...",a:["Perbedaan harus dihapus","Keberagaman perlu dikelola dengan aturan dan tanggung jawab bersama","Konflik tidak dapat dihindari","Setiap kelompok hidup sendiri"],c:1}
-];
+  let benar = 0;
+  let terjawab = 0;
+  const total = Object.keys(kunciJawaban).length;
 
-function roomPath() {
-  return "rooms/" + currentRoom;
-}
-function nowServer() {
-  return Date.now() + offset;
-}
-function escapeHtml(value) {
-  return String(value).replace(/[&<>"']/g, ch => ({
-    "&":"&amp;", "<":"&lt;", ">":"&gt;",
-    '"':"&quot;", "'":"&#039;"
-  })[ch]);
-}
+  for (const nomor in kunciJawaban) {
+    const pilihan = document.querySelector('input[name="' + nomor + '"]:checked');
 
-/* Navigasi halaman */
-window.showPage = function(id) {
-  document.querySelectorAll(".contentPage").forEach(el => el.classList.remove("active"));
-  const page = document.getElementById(id);
-  if (page) page.classList.add("active");
-  window.scrollTo({top:0, behavior:"smooth"});
-  if (id === "kasus") initCaseGame();
-};
-
-/* Tab materi */
-window.matTab = function(button, id) {
-  document.querySelectorAll(".mat").forEach(el => el.classList.add("hidden"));
-  document.getElementById(id)?.classList.remove("hidden");
-  document.querySelectorAll(".tabs .tab").forEach(el => el.classList.remove("active"));
-  button.classList.add("active");
-};
-
-/* Simpan LKPD lokal */
-window.saveLKPD = function() {
-  const data = {
-    masalah:document.getElementById("lk1").value,
-    prinsip:document.getElementById("lk2").value,
-    solusi:document.getElementById("lk3").value,
-    penerapan:document.getElementById("lk4").value
-  };
-  localStorage.setItem("lkpdMadinah", JSON.stringify(data));
-  alert("Jawaban LKPD tersimpan di perangkat ini.");
-};
-
-/* Status Firebase */
-try {
-  const app = initializeApp(firebaseConfig);
-  db = getDatabase(app);
-  onValue(ref(db, ".info/serverTimeOffset"), snap => {
-    offset = snap.val() || 0;
-  });
-  document.getElementById("firebaseStatus").textContent =
-    "Status: aplikasi terhubung. Buat room atau masukkan kode room.";
-} catch (error) {
-  console.error("Firebase gagal diinisialisasi:", error);
-  document.getElementById("firebaseStatus").textContent =
-    "Firebase gagal dimuat. Periksa konfigurasi dan koneksi internet.";
-}
-
-function renderScore(players) {
-  const list = Object.values(players || {}).sort(
-    (a,b) => (b.score || 0) - (a.score || 0)
-  );
-  document.getElementById("scoreboard").innerHTML = list.length
-    ? list.map((p,i) => `
-      <div class="scoreRow">
-        <div class="rank">#${i+1}</div>
-        <div><strong>${escapeHtml(p.name || "Siswa")}</strong>
-        <div class="small">${p.correct || 0} benar • ${p.answered || 0} dijawab</div></div>
-        <strong>${p.score || 0}</strong>
-      </div>`).join("")
-    : '<div class="notice">Belum ada pemain.</div>';
-}
-
-/* Guru membuat room */
-window.hostGame = async function() {
-  if (!db) {
-    alert("Firebase belum siap. Periksa konfigurasi dan koneksi internet.");
-    return;
-  }
-  const code = (prompt("Masukkan kode room:", "MADINAH8") || "")
-    .trim().toUpperCase();
-  if (!/^[A-Z0-9_-]{3,12}$/.test(code)) {
-    alert("Kode room harus 3–12 karakter, menggunakan huruf, angka, - atau _.");
-    return;
-  }
-
-  try {
-    currentRoom = code;
-    isHost = true;
-    currentPlayer = "GURU";
-
-    const existing = await get(ref(db, roomPath()));
-    if (existing.exists()) {
-      const overwrite = confirm("Room ini sudah ada. Buat ulang room dan hapus skor lama?");
-      if (!overwrite) return;
+    if (pilihan) {
+      terjawab++;
+      if (pilihan.value === kunciJawaban[nomor]) {
+        benar++;
+      }
     }
-
-    await set(ref(db, roomPath()), {
-      status:"waiting",
-      host:"GURU",
-      questionIndex:-1,
-      players:{},
-      answers:{},
-      createdAt:serverTimestamp()
-    });
-
-    document.getElementById("joinCard").innerHTML = `
-      <h3>👩‍🏫 Mode Guru</h3>
-      <div class="notice">Kode room:
-      <strong style="font-size:25px;color:#25316D">${escapeHtml(code)}</strong>
-      <br>Bagikan kode ini kepada siswa.</div>
-      <p><button class="btn primary" onclick="startGame()">▶️ Mulai Kuis</button></p>
-      <button class="btn" onclick="resetRoom()">🗑️ Reset Room</button>`;
-    listenRoom();
-  } catch (error) {
-    console.error(error);
-    alert("Room gagal dibuat. Periksa aturan akses Firebase Realtime Database.");
-  }
-};
-
-/* Siswa bergabung */
-window.joinGame = async function() {
-  if (!db) {
-    alert("Firebase belum siap. Periksa konfigurasi dan koneksi internet.");
-    return;
-  }
-  const name = document.getElementById("playerName").value.trim();
-  const code = document.getElementById("roomCode").value.trim().toUpperCase();
-
-  if (!name || !code) {
-    alert("Isi nama dan kode room terlebih dahulu.");
-    return;
   }
 
-  try {
-    currentRoom = code;
-    isHost = false;
+  const nilai = Math.round((benar / total) * 100);
+  const hasil = document.getElementById("hasilKuis");
 
-    const roomSnap = await get(ref(db, roomPath()));
-    if (!roomSnap.exists()) {
-      alert("Room tidak ditemukan. Minta guru membuat room terlebih dahulu.");
-      return;
-    }
+  hasil.style.display = "block";
+  hasil.style.background = nilai >= 70 ? "#e7f7ed" : "#fff2dc";
+  hasil.style.color = "#302b3d";
 
-    const room = roomSnap.val();
-    if (room.status === "finished") {
-      alert("Permainan ini sudah selesai. Minta guru membuat room baru.");
-      return;
-    }
+  hasil.innerHTML =
+    "<h3>Hasil Kuis Kamu</h3>" +
+    "<p>Jawaban benar: <b>" + benar + " dari " + total + "</b></p>" +
+    "<p>Soal terjawab: <b>" + terjawab + " dari " + total + "</b></p>" +
+    "<p>Nilai: <b>" + nilai + "</b></p>" +
+    "<p>" +
+    (nilai >= 90
+      ? "Luar biasa! Kamu sudah memahami materi dengan sangat baik."
+      : nilai >= 70
+      ? "Bagus! Pelajari kembali bagian yang masih belum kamu kuasai."
+      : "Jangan menyerah. Baca kembali materi, lalu coba lagi.") +
+    "</p>";
 
-    currentPlayer = (crypto.randomUUID)
-      ? crypto.randomUUID()
-      : "p" + Date.now() + Math.random().toString(36).slice(2,8);
+  hasil.scrollIntoView({behavior: "smooth", block: "center"});
+});
 
-    const playerRef = ref(db, roomPath() + "/players/" + currentPlayer);
-    await set(playerRef, {
-      name:name, score:0, correct:0, answered:0,
-      joinedAt:serverTimestamp()
-    });
-    onDisconnect(playerRef).remove();
-
-    document.getElementById("joinCard").innerHTML = `
-      <h3>🙋 ${escapeHtml(name)}</h3>
-      <div class="notice">Room: <strong>${escapeHtml(code)}</strong>
-      <br>Menunggu permainan dimulai...</div>`;
-    listenRoom();
-  } catch (error) {
-    console.error(error);
-    alert("Tidak bisa masuk room. Periksa koneksi dan aturan akses Firebase.");
-  }
-};
-
-function listenRoom() {
-  if (unsubscribeRoom) unsubscribeRoom();
-  unsubscribeRoom = onValue(ref(db, roomPath()), snap => {
-    const data = snap.val();
-    if (!data) {
-      document.getElementById("gamePanel").innerHTML =
-        '<div class="notice">Room tidak ditemukan atau sudah dihapus.</div>';
-      return;
-    }
-    renderScore(data.players);
-    renderGame(data);
-  }, error => {
-    console.error(error);
-    alert("Gagal membaca room. Periksa aturan akses Firebase.");
-  });
+function ulangKuis() {
+  document.getElementById("formKuis").reset();
+  const hasil = document.getElementById("hasilKuis");
+  hasil.style.display = "none";
+  hasil.innerHTML = "";
+  document.getElementById("kuis").scrollIntoView({behavior: "smooth"});
 }
-
-function renderGame(data) {
-  const panel = document.getElementById("gamePanel");
-
-  if (data.status === "waiting") {
-    panel.innerHTML = `<div class="notice">⏳ Menunggu guru memulai.
-      Pemain masuk: <strong>${Object.keys(data.players || {}).length}</strong></div>`;
-    return;
-  }
-
-  if (data.status === "finished") {
-    const players = Object.values(data.players || {}).sort(
-      (a,b) => (b.score || 0) - (a.score || 0)
-    );
-    panel.innerHTML = `<div class="gameHero"><h2>🎉 Permainan Selesai!</h2>
-      <p>Terima kasih sudah bermain. Lihat papan skor untuk hasil akhir.</p></div>
-      <div class="card section"><h3>🏆 Hasil</h3>
-      ${players.map((p,i) => `<p><strong>#${i+1} ${escapeHtml(p.name)}</strong>
-      — ${p.score || 0} poin</p>`).join("")}</div>`;
-    return;
-  }
-
-  const qi = Number(data.questionIndex);
-  const q = questions[qi];
-  if (!q) return;
-
-  if (isHost) {
-    panel.innerHTML = `<div class="notice">👩‍🏫 Soal ${qi+1}/${questions.length}.
-      Siswa menjawab dari HP masing-masing.</div>
-      <div class="card section"><h2>${q.q}</h2>
-      <div class="progress"><div style="width:${((qi+1)/questions.length)*100}%"></div></div>
-      <p class="small">Jawaban siswa akan tercatat di papan skor.</p>
-      <button class="btn primary" onclick="${qi === questions.length-1 ? "finishGame()" : "nextQuestion()"}">
-      ${qi === questions.length-1 ? "🏁 Selesaikan" : "➡️ Soal Berikutnya"}</button></div>`;
-    return;
-  }
-
-  const answer = ((data.answers || {})[currentPlayer] || {})[qi];
-  if (answer) {
-    panel.innerHTML = `<div class="gameHero"><h2>✅ Jawaban terkirim!</h2>
-      <p>Tunggu soal berikutnya.</p></div>`;
-    return;
-  }
-
-  answerLocked = false;
-  panel.innerHTML = `<div class="card">
-    <div class="timer" id="qTimer">5.0 dtk</div>
-    <p class="small">Soal ${qi+1}/${questions.length}</p>
-    <h2>${q.q}</h2>
-    <div class="choiceGrid">${q.a.map((text,i) =>
-      `<button class="choice" onclick="submitAnswer(${i})">${String.fromCharCode(65+i)}. ${text}</button>`
-    ).join("")}</div></div>`;
-  startTimer(data.questionStartedAt);
-}
-
-function startTimer(startAt) {
-  clearInterval(timerInt);
-  const tick = () => {
-    const el = document.getElementById("qTimer");
-    if (!el) {
-      clearInterval(timerInt);
-      return;
-    }
-    const remain = Math.max(0, 5000 - (nowServer() - (startAt || nowServer())));
-    el.textContent = (remain / 1000).toFixed(1) + " dtk";
-    if (remain <= 0) clearInterval(timerInt);
-  };
-  tick();
-  timerInt = setInterval(tick, 100);
-}
-
-/* Siswa menjawab */
-window.submitAnswer = async function(choice) {
-  if (answerLocked || !db || !currentRoom || !currentPlayer) return;
-  answerLocked = true;
-
-  try {
-    const snap = await get(ref(db, roomPath()));
-    const data = snap.val();
-
-    if (!data || data.status !== "playing") {
-      answerLocked = false;
-      return;
-    }
-
-    const qi = Number(data.questionIndex);
-    const q = questions[qi];
-    if (!q) {
-      answerLocked = false;
-      return;
-    }
-
-    const previous = ((data.answers || {})[currentPlayer] || {})[qi];
-    if (previous) return;
-
-    const elapsed = Math.max(0, nowServer() - (data.questionStartedAt || nowServer()));
-    const correct = choice === q.c;
-    const points = correct && elapsed <= 5000
-      ? 100 + Math.max(0, 100 - Math.floor(elapsed / 50))
-      : 0;
-
-    const player = (data.players || {})[currentPlayer];
-    if (!player) {
-      answerLocked = false;
-      alert("Data pemain tidak ditemukan. Silakan masuk room kembali.");
-      return;
-    }
-
-    const updates = {};
-    updates[`${roomPath()}/answers/${currentPlayer}/${qi}`] = {
-      choice:choice,
-      correct:correct,
-      points:points,
-      submittedAt:serverTimestamp(),
-      elapsed:elapsed
-    };
-    updates[`${roomPath()}/players/${currentPlayer}/score`] = (player.score || 0) + points;
-    updates[`${roomPath()}/players/${currentPlayer}/correct`] = (player.correct || 0) + (correct ? 1 : 0);
-    updates[`${roomPath()}/players/${currentPlayer}/answered`] = (player.answered || 0) + 1;
-
-    await update(ref(db), updates);
-
-    document.querySelectorAll(".choice").forEach((button,i) => {
-      button.disabled = true;
-      if (i === choice) button.classList.add(correct ? "correct" : "wrong");
-    });
-  } catch (error) {
-    console.error(error);
-    answerLocked = false;
-    alert("Jawaban gagal disimpan. Periksa koneksi internet.");
-  }
-};
-
-/* Guru mengontrol jalannya kuis */
-window.startGame = async function() {
-  if (!db || !isHost || !currentRoom) return;
-  try {
-    await update(ref(db, roomPath()), {
-      status:"playing",
-      questionIndex:0,
-      questionStartedAt:serverTimestamp(),
-      answers:{}
-    });
-  } catch (error) {
-    console.error(error);
-    alert("Gagal memulai permainan. Periksa aturan akses Firebase.");
-  }
-};
-
-window.nextQuestion = async function() {
-  if (!db || !isHost || !currentRoom) return;
-  try {
-    const snap = await get(ref(db, roomPath()));
-    const data = snap.val();
-    if (!data || data.status !== "playing") return;
-
-    const next = Number(data.questionIndex) + 1;
-    if (next >= questions.length) {
-      await window.finishGame();
-      return;
-    }
-    await update(ref(db, roomPath()), {
-      questionIndex:next,
-      questionStartedAt:serverTimestamp()
-    });
-  } catch (error) {
-    console.error(error);
-    alert("Gagal membuka soal berikutnya.");
-  }
-};
-
-window.finishGame = async function() {
-  if (!db || !isHost || !currentRoom) return;
-  try {
-    await update(ref(db, roomPath()), {status:"finished"});
-  } catch (error) {
-    console.error(error);
-    alert("Gagal menyelesaikan permainan.");
-  }
-};
-
-window.resetRoom = async function() {
-  if (!db || !isHost || !currentRoom) return;
-  if (!confirm("Hapus room dan skor permainan ini?")) return;
-  try {
-    await remove(ref(db, roomPath()));
-    if (unsubscribeRoom) unsubscribeRoom();
-    location.reload();
-  } catch (error) {
-    console.error(error);
-    alert("Room gagal dihapus.");
-  }
-};
-
-/* Game studi kasus */
-const cases = [
-  {
-    q:"Temanmu berbeda daerah dan logat bicara. Beberapa siswa mengejeknya. Apa tindakan paling tepat?",
-    a:["Ikut tertawa","Menghentikan ejekan dan menghargai perbedaan","Diam saja","Membalas mengejek"],
-    c:1,
-    e:"Menghargai martabat orang lain dan mencegah perlakuan yang merugikan."
-  },
-  {
-    q:"Dalam kerja kelompok, satu siswa berbeda keyakinan. Apa yang sebaiknya dilakukan?",
-    a:["Menolaknya","Tetap bekerja sama dalam tugas dan saling menghormati","Memaksanya mengikuti ibadah kelompok","Menyuruhnya bekerja sendiri"],
-    c:1,
-    e:"Kerja sama sosial dapat dilakukan dengan tetap menghormati perbedaan keyakinan."
-  },
-  {
-    q:"Dua kelompok berselisih karena pembagian tugas. Apa langkah awal yang tepat?",
-    a:["Langsung menyalahkan satu pihak","Bermusyawarah dan menyusun kesepakatan yang adil","Menyebarkan masalah","Membiarkannya"],
-    c:1,
-    e:"Musyawarah membantu konflik diselesaikan secara adil."
-  },
-  {
-    q:"Kelas ingin membuat aturan hidup bersama. Pilihan yang paling tepat?",
-    a:["Menguntungkan kelompok tertentu","Jelas, adil, disepakati, dan mengatur tanggung jawab","Tidak perlu aturan","Bebas melakukan apa saja"],
-    c:1,
-    e:"Kesepakatan bersama perlu melindungi ketertiban, hak, dan tanggung jawab."
-  }
-];
-
-let caseIdx = 0;
-
-function initCaseGame() {
-  caseIdx = 0;
-  renderCase();
-}
-
-function renderCase() {
-  const c = cases[caseIdx];
-  const box = document.getElementById("caseGame");
-  box.innerHTML = `<p class="small">Kasus ${caseIdx+1} dari ${cases.length}</p>
-    <h2>${c.q}</h2>
-    <div class="choiceGrid">${c.a.map((text,i) =>
-      `<button class="choice" onclick="answerCase(${i})">${String.fromCharCode(65+i)}. ${text}</button>`
-    ).join("")}</div><div id="caseExplain"></div>`;
-}
-
-window.answerCase = function(i) {
-  const c = cases[caseIdx];
-  const correct = i === c.c;
-
-  document.querySelectorAll("#caseGame .choice").forEach((button,n) => {
-    button.disabled = true;
-    if (n === c.c) button.classList.add("correct");
-    if (n === i && !correct) button.classList.add("wrong");
-  });
-
-  document.getElementById("caseExplain").innerHTML =
-    `<div class="callout"><strong>${correct ? "✅ Tepat!" : "💡 Belum tepat."}</strong><br>${c.e}</div>
-    <button class="btn primary" style="margin-top:12px" onclick="${caseIdx < cases.length-1 ? "nextCase()" : "finishCase()"}">
-    ${caseIdx < cases.length-1 ? "Kasus Berikutnya →" : "Selesai 🎉"}</button>`;
-};
-
-window.nextCase = function() {
-  caseIdx++;
-  renderCase();
-};
-
-window.finishCase = function() {
-  document.getElementById("caseGame").innerHTML =
-    `<div class="gameHero"><h2>🎉 Hebat!</h2>
-    <p>Kamu sudah menyelesaikan semua studi kasus.</p>
-    <button class="btn light" onclick="showPage('pbl')">Lanjut PBL</button></div>`;
-};
-
-initCaseGame();
 </script>
+
 </body>
 </html>
